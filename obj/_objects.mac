@@ -1,0 +1,21 @@
+ALPHA_OBJECTS=
+
+PASS0_ALPHA_OBJECTS=
+
+AXP64_OBJECTS=
+
+PASS0_AXP64_OBJECTS=
+
+386_OBJECTS= \
+    $(_OBJ_DIR)\i386\digijoy.obj \
+    $(_OBJ_DIR)\i386\poll.obj \
+    $(_OBJ_DIR)\i386\timing.obj \
+    $(_OBJ_DIR)\i386\main.obj \
+    $(_OBJ_DIR)\i386\debug.obj
+
+PASS0_386_OBJECTS=
+
+IA64_OBJECTS=
+
+PASS0_IA64_OBJECTS=
+

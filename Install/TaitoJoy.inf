@@ -1,0 +1,133 @@
+
+[Version]
+CatalogFile=joystick.cat
+layoutfile=layout.inf,layout1.inf,layout2.inf
+
+Signature=$CHICAGO$
+Provider=%String0%
+Class=MEDIA
+SetupClass=BASE
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,1
+HKR,,Installer,,MMSys.Cpl
+
+[SourceDisksNames]
+1="Taito Wolf System JAMMA Input Mini Drivers",,0
+
+[SourceDisksFiles]
+TaitoJoy.vxd=1
+
+[DestinationDirs]
+Taito.FileList=11
+Standard.FileList=11
+
+[Manufacturer]
+%String1%=JC
+
+[JC]
+%String2%=JC.Install,JC_Dev0001,Dev0001
+
+[VirtualGamePort.LC0]
+ConfigPriority=DESIRED
+IOConfig=EA01-EA01(3ff::)
+
+[VirtualGamePort.LC1]
+ConfigPriority=NORMAL
+IOConfig=EB01-EB01(3ff::)
+
+[JC.Install]
+;LogConfig=VirtualGamePort.LC0,VirtualGamePort.LC1
+CopyFiles=Taito.FileList,Standard.FileList
+DelFiles=Taito.FileList
+KnownFiles=Known.FileList
+AddReg=JC_Driver.AddReg, JC_Controller.AddReg
+DelReg=JC_Driver.AddReg, JC_Controller.AddReg
+
+[Taito.FileList]
+TaitoJoy.vxd
+
+[Standard.FileList]
+vjoyd.vxd
+msjstick.drv
+
+[Known.FileList]
+vjoyd.vxd=safe
+msjstick.drv=safe
+
+[JC_Driver.AddReg]
+;GamePort Configuration
+HKR,,DevLoader,,"mmdevldr.vxd"
+HKR,,Driver,,vjoyd.vxd
+
+HKR,Drivers,,,
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\joystick,,,
+HKR,Drivers\joystick\msjstick.drv,Description,,%String2%
+HKR,Drivers\joystick\msjstick.drv,Driver,,msjstick.drv
+
+;HKR,,NTMPDriver,,TaitoJoy.vxd
+
+[JC_Controller.AddReg]
+
+; All defined joysticks are described in the registry under their own sub key 
+; under HKLM\SYSTEM\CurrentControlSet\Control\MediaProperties\
+; PrivateProperties\Joystick\OEM.  Devices which can be serviced by the 
+; standard gameport driver require only a string value for friendly name,
+; OEMName and the binary value OEMData, containing DWORD of flags, followed 
+; by the number of buttons.  The DWORD of flags is made from a combination
+; of the JOY_HWS_* flags defined in the mmddk.h and dinput.h files.
+;
+; If a driver is required, this is specified in the string value OEMCallout.
+;
+; For this driver, an additional binary value, OEMComboMapping has been 
+; used to allow the driver to interpret the 16 possible button values into 
+; alternative button and POV combinations.
+; The 16 combinations are stored in order of the binary value of the button 
+; values with each one taking one DWORD.
+; For documentation purposes each type is preceeded by three blocks of 
+; comments, each being four lines of four values.  The first block is the 
+; semantics of the combinations, the second is the DWORD representations 
+; and the third is the DWORD values in low endian byte ordering.
+
+;7 button; 2, 4 way POV
+; Nothing        b1             b2             p0(270)
+; b3             b5             Unassigned     p0(180)
+; b4             b6 (b7)        Unassigned     p0(90)
+; Unassigned     b7 (b8)        Unassigned     p0(0)
+
+; ff fe 00 00    ff fe 00 01    ff fe 00 02    69 78 00 00    
+; ff fe 00 04    ff fe 00 10    ff fe 00 00    46 50 00 00    
+; ff fe 00 08    ff fe 00 40    ff fe 00 00    23 28 00 00    
+; ff fe 00 00    ff fe 00 80    ff fe 00 00    00 00 00 00    
+
+; 00 00 fe ff    01 00 fe ff    02 00 fe ff    00 00 78 69    
+; 04 00 fe ff    10 00 fe ff    00 00 fe ff    00 00 50 46    
+; 08 00 fe ff    40 00 fe ff    00 00 fe ff    00 00 28 23    
+; 00 80 78 69    80 00 fe ff    00 00 fe ff    00 00 00 00    
+
+HKLM,%KEY_OEM%\TAITOJAMMA_1P,OEMName,0,%P1_NAME%
+HKLM,%KEY_OEM%\TAITOJAMMA_1P,OEMCallout,0,TaitoJoy.vxd
+HKLM,%KEY_OEM%\TAITOJAMMA_1P,OEMData,1,20,00,00,00,07,00,00,00
+
+;HKLM,%KEY_OEM%\TAITOJAMMA_2P,OEMName,0,%P2_NAME%
+;HKLM,%KEY_OEM%\TAITOJAMMA_2P,OEMCallout,0,TaitoJoy.vxd
+;HKLM,%KEY_OEM%\TAITOJAMMA_2P,OEMData,1,20,00,00,00,07,00,00,00
+
+HKLM,%KEY_OEM%\TAITOJAMMA_3P,OEMName,0,%P3_NAME%
+HKLM,%KEY_OEM%\TAITOJAMMA_3P,OEMCallout,0,TaitoJoy.vxd
+HKLM,%KEY_OEM%\TAITOJAMMA_3P,OEMData,1,22,00,00,00,0e,00,00,00
+
+[Strings]
+String0="Jeff Chen"
+String1="Jeff Chen"
+String2="Taito Wolf System JAMMA Inputs Driver"
+KEY_OEM="SYSTEM\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM"
+P1_NAME="JAMMA Input for Player 1"
+;P2_NAME="JAMMA Input for Player 2"
+P3_NAME="JAMMA Input Combined"
+MediaClassName="Sound, video and game controllers"

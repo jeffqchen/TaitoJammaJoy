@@ -1,0 +1,91 @@
+[Version]
+CatalogFile=joystick.cat
+layoutfile=layout.inf,layout1.inf,layout2.inf
+Signature="$CHICAGO$"
+Class=MEDIA
+ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
+provider=%Microsoft%
+
+[ClassInstall]
+Addreg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,"0"
+HKR,,Installer,,mmci.dll
+
+[Manufacturer]
+%StdMfgName%=StdMfg
+%Microsoft%=Microsoft
+
+[Microsoft]
+%*PNPB02F.DeviceDesc%=MSJSTICK, *PNPB02F
+
+;---------------------------------------------------------------;
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+[DestinationDirs]
+MSJSTICK.CopyList = 11          ; LDID_SYS
+GAMEPORT.CopyList = 11          ; LDID_SYS
+STDUSBJSTICK.CopyFiles = 10,system32\drivers
+STDUSBJSTICK.DelFiles = 11
+HIDGameDevice.Copy = 11         ; LDID_SYS
+
+;---------------------------------------------------------------;
+
+[MSJSTICK]
+LogConfig=BasicJoyStick.LC0,BasicJoystick.LC1
+CopyFiles=MSJSTICK.CopyList, GAMEPORT.CopyList
+AddReg=JOYSTICK.AddReg, MSJSTICK.AddReg
+UpdateInis=MSJSTICK.UpdateInis
+KnownFiles=MSJSTICK.KnownFiles
+
+[*PNPB02F.det]
+AddReg=PreCopySection
+
+[BasicJoyStick.LC0]
+ConfigPriority=DESIRED
+IOConfig=ea01-ea01(3ff::)
+
+[BasicJoyStick.LC1]
+ConfigPriority=NORMAL
+IOConfig=eb01-eb01(3ff::)
+
+;---------------------------------------------------------------;
+
+[MSJSTICK.CopyList]
+msjstick.drv,,
+
+[MSJSTICK.KnownFiles]
+essjoy.vxd.4.3.0=force
+essjoy.drv.4.3.0=force
+
+[GAMEPORT.CopyList]
+msanalog.vxd,,
+
+[JOYSTICK.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\joystick,,,
+
+[MSJSTICK.AddReg]
+HKR,,Driver,,vvjoyd.vxd
+HKR,Drivers\joystick\msjstick.drv,Description,,%*PNPB02F.DeviceDesc%
+HKR,Drivers\joystick\msjstick.drv,Driver,,msjstick.drv
+HKR,Drivers,SubClasses,,"joystick"
+
+[MSJSTICK.UpdateInis]
+system.ini,drivers,"joystick="
+
+
+;---------------------------------------------------------------;
+
+[Strings]
+
+StdMfgName="(Non-Standard game device)"
+Microsoft="Jeff Chen"
+
+*PNPB02F.DeviceDesc="Virtual Gameport Joystick"
+MediaClassName="Sound, video and game controllers"

@@ -1,0 +1,18 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: GamePort VxD Joy - Win32 Debug--------------------
+</h3>
+
+BUILD: environment variable PROCESSOR_ARCHITECTURE must be defined
+Error executing C:\98DDK\bin\build.exe.
+
+
+
+<h3>Results</h3>
+digikey.vxd - 1 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

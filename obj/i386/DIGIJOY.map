@@ -1,0 +1,96 @@
+ DIGIJOY
+
+ Timestamp is 66c4168d (Tue Aug 20 00:07:41 2024)
+
+ Preferred load address is 00400000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000001cH .bss                    CODE
+ 0001:0000001c 00000060H .data                   CODE
+ 0001:0000007c 0000006eH _LDATA                  CODE
+ 0001:000000ec 000000d4H _LTEXT                  CODE
+ 0002:00000000 00000c25H _PTEXT                  CODE
+ 0003:00000000 00000014H _PDATA                  DATA
+ 0004:00000000 0000014eH _ITEXT                  CODE
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000000       _MaxDevnodes               00401000     <common>
+ 0001:00000004       _dwPollFlags               00401004     <common>
+ 0001:00000008       _fpPoll                    00401008     <common>
+ 0001:0000000c       _dwPollType                0040100c     <common>
+ 0001:00000010       _NumDevnodes               00401010     <common>
+ 0001:00000014       _pDevnodes                 00401014     <common>
+ 0001:00000018       _NewTimeout                00401018     <common>
+ 0001:0000001c       _dPad                      0040101c     main.obj
+ 0001:00000020       _p1Buttons                 00401020     main.obj
+ 0001:00000024       _p2Buttons                 00401024     main.obj
+ 0001:00000028       _cabinetButtons            00401028     main.obj
+ 0001:0000002c       _jammaDpad                 0040102c     main.obj
+ 0001:00000050       _jammaPOV                  00401050     main.obj
+ 0001:0000007c       DIGIJOY_DDB                0040107c     digijoy.obj
+ 0001:000000cc       _szRegPollFlags            004010cc     main.obj
+ 0001:000000d8       _szTypeKey                 004010d8     main.obj
+ 0001:000000ec       DIGIJOY_Control            004010ec f   digijoy.obj
+ 0001:00000110       DIGIJOY_Dynamic_Exit       00401110 f   digijoy.obj
+ 0001:00000118       _DSWPoll                   00401118 f   poll.obj
+ 0001:00000119       _ESWPoll                   00401119     poll.obj
+ 0001:00000130       _DRTCPoll                  00401130 f   poll.obj
+ 0001:0000019f       _DTSCPoll                  0040119f f   poll.obj
+ 0002:00000000       DIGIJOY_Dynamic_ReInit     00401200 f   digijoy.obj
+ 0002:00000007       _VJoyDRegister@4           00401207 f   digijoy.obj
+ 0002:00000007       __VJoyDRegister@4@4        00401207     digijoy.obj
+ 0002:00000020       _jsPoll@20                 00401220 f   poll.obj
+ 0002:000001c1       _ERTCPoll                  004013c1 f   poll.obj
+ 0002:000002b9       _ETSCPoll                  004014b9 f   poll.obj
+ 0002:000002e0       _InitSW@0                  004014e0 f   timing.obj
+ 0002:000002eb       _InitRTC@4                 004014eb f   timing.obj
+ 0002:0000038c       _InitTSC@4                 0040158c f   timing.obj
+ 0002:000003dc       __CalcTSCTickTimeOut@4@4   004015dc     timing.obj
+ 0002:000003dc       _CalcTSCTickTimeOut@4      004015dc f   timing.obj
+ 0002:0000040b       __CalcRTCTickTimeOut@4@4   0040160b     timing.obj
+ 0002:0000040b       _CalcRTCTickTimeOut@4      0040160b f   timing.obj
+ 0002:00000433       _CalcSWTickTimeOut@4       00401633 f   timing.obj
+ 0002:00000433       __CalcSWTickTimeOut@4@4    00401633     timing.obj
+ 0002:00000440       _GetPortDataPtr@4          00401640 f   main.obj
+ 0002:0000047a       _PollRoutine@12            0040167a f   main.obj
+ 0002:00000540       _EliminateDevnode@4        00401740 f   main.obj
+ 0002:000005d0       _CfgRoutine                004017d0 f   main.obj
+ 0002:000005fc       _StartDevnode@4            004017fc f i main.obj
+ 0002:000009ba       _StopDevnode@4             00401bba f i main.obj
+ 0002:00000a0c       _Initialize@8              00401c0c f   main.obj
+ 0002:00000b3c       _RegisterLoad@0            00401d3c f   main.obj
+ 0002:00000bac       _ExitRoutine               00401dac f   main.obj
+ 0003:00000000       _dwTSCScale                00402000     timing.obj
+ 0003:00000004       _dwTickTimeout             00402004     timing.obj
+ 0003:00000008       _dwReadLimit               00402008     timing.obj
+ 0003:0000000c       _dwIntLimit                0040200c     timing.obj
+ 0003:00000010       _dwReadAvg                 00402010     timing.obj
+ 0004:00000000       DIGIJOY_Dynamic_Init       00402200 f   digijoy.obj
+ 0004:00000034       _IsTSCPresent@0            00402234 f   timing.obj
+ 0004:000000d8       _InitRoutine               004022d8 f   main.obj
+
+ entry point at        0000:00000000
+
+ Static symbols
+
+ 0002:000003dc       $$$00004                   004015dc f   timing.obj
+ 0002:0000040b       $$$00006                   0040160b f   timing.obj
+ 0002:00000433       $$$00008                   00401633 f   timing.obj
+ 0002:0000043f       $$$00010                   0040163f f   timing.obj
+ 0004:000000d7       $$$00013                   004022d7 f   timing.obj
+ 0002:000001c1       $$$00002                   004013c1 f   poll.obj
+ 0001:00000130       $$$00004                   00401130 f   poll.obj
+ 0002:000002b9       $$$00006                   004014b9 f   poll.obj
+ 0001:0000019f       $$$00008                   0040119f f   poll.obj
+ 0002:000002df       $$$00010                   004014df f   poll.obj
+ 0001:000001c0       $$$00012                   004011c0 f   poll.obj
+ 0002:00000000       $$$00001                   00401200 f   digijoy.obj
+ 0002:00000007       $$$00003                   00401207 f   digijoy.obj
+ 0002:0000001f       $$$00005                   0040121f f   digijoy.obj
+ 0004:00000000       $$$00007                   00402200 f   digijoy.obj
+ 0004:00000031       $$$00009                   00402231 f   digijoy.obj
+ 0001:000000cc       $$$00010                   004010cc f   digijoy.obj
+ 0001:000000ec       $$$00011                   004010ec f   digijoy.obj
+ 0001:00000110       $$$00013                   00401110 f   digijoy.obj
+ 0001:00000117       $$$00015                   00401117 f   digijoy.obj

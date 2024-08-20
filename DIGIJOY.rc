@@ -1,0 +1,10 @@
+#include <ver.h>
+#include "c:\98DDK\inc\win98\ntverp.h"
+
+#define VER_FILETYPE                VFT_VXD
+#define VER_FILESUBTYPE             VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Gameport Joystick Virtual Device for Taito Wolf System"
+#define VER_INTERNALNAME_STR        "DIGIJOY.VXD"
+#define VER_ORIGINALFILENAME_STR    "DIGIJOY.VXD"
+
+#include "common.ver"
