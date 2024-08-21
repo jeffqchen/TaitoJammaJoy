@@ -26,8 +26,8 @@ The end result is that I can only present one joystick to Windows at the same ti
 ------------
 ## Technical Details
 
-|Address  |High        |Low         |
-|---------|------------|------------|
-| 0xCB206 | 2P D-Pad   | 1P D-Pad   |
-| 0xCB201 | 1P Buttons | 1PButtons  |
-| 0xCB200 | 2P Buttons | 2PButtons  |
+|Address                |High                                                                               |Low                                                                                              |
+|-----------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| 0xCB206               | 2P Directions:<br>`Bit4` - Right<br>`Bit3` - Left<br>`Bit2` - Down<br>`Bit1` - Up | 1P Directions:<br>`Bit4` - Right<br>`Bit3` - Left<br>`Bit2` - Down<br>`Bit1` - Up               |
+| 0xCB201<br>1P Buttons | `Bit4` - Coin<br>`Bit3` - Start<br>`Bit1` - Button 5                              | `Bit4` - Button 4<br>`Bit3` - Button 3<br>`Bit2` - Button 2<br>`Bit1` - Button 1                |
+| 0xCB200<br>2P Buttons | `Bit4` - Coin<br>`Bit3` - Start<br>`Bit1` - Button 5                              | `Bit4` - Button 4<br>`Bit3` - Button 3<br>`Bit2` - Button 2<br>`Bit1` - Button 1                |
