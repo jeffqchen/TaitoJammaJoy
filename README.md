@@ -11,3 +11,14 @@ The end result is that I can only present one joystick to Windows at the same ti
 
 ------------
 ## Installation
+
+1. Got to `Start` -> `Settings` -> `Control Panel`. Double click `Game Controllers`.
+2. On the `General` tab, click `Add...`. Then, click `Add Other...`.
+3. In the next window, click `Have Disk...`, then locate the driver files.
+4. When `Select Device` windows is shown, two devices (`Virtual Gameport Joystick` and `Taito Wolf System JAMMA Input Driver`) will show up.
+5. Install both devices following these steps.
+6. Go back to the `Game Controllers` window. Then click `Add...`.
+7. Find `JAMMA Input for Player 1` or `JAMMA Input Combined`, add the one you wish to use.
+8. Test inputs after adding the joystick.
+
+*In the case where Windows keeps reporting the joystick is not ready, run regedit and delete everything under `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\MediaResources\joystick\<FixedKey>\CurrentJoystickSettings`, then add the JAMMA joystick from the list again.*
