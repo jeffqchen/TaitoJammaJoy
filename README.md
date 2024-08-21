@@ -22,3 +22,12 @@ The end result is that I can only present one joystick to Windows at the same ti
 8. Test inputs after adding the joystick.
 
 *In the case where Windows keeps reporting the joystick is not ready, run regedit and delete everything under `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\MediaResources\joystick\<FixedKey>\CurrentJoystickSettings`, then add the JAMMA joystick from the list again.*
+
+------------
+## Technical Details
+
+|Address  |High        |Low         |
+|---------|------------|------------|
+| 0xCB206 | 2P D-Pad   | 1P D-Pad   |
+| 0xCB201 | 1P Buttons | 1PButtons  |
+| 0xCB200 | 2P Buttons | 2PButtons  |
