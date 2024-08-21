@@ -26,6 +26,10 @@ The end result is that I can only present one joystick to Windows at the same ti
 ------------
 ## Technical Details
 
+Byte values can be read from the following address.
+
+Button state is inverted - 1 is released, 0 is pressed.
+
 |Address                |High                                                                               |Low                                                                                              |
 |-----------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | 0xCB206               | 2P Directions:<br>`Bit4` - Right<br>`Bit3` - Left<br>`Bit2` - Down<br>`Bit1` - Up | 1P Directions:<br>`Bit4` - Right<br>`Bit3` - Left<br>`Bit2` - Down<br>`Bit1` - Up               |
