@@ -30,11 +30,13 @@ The end result is that I can only present one joystick to Windows at the same ti
 ------------
 ## Compiling
 
-This project is developed with `Windows 98 Driver Development Kit`, aka `98DDK`. The Visual Studio workspace is for viewing coding only. Attempt to compile through VS will fail.
+This project is developed with `Windows 98 Driver Development Kit`, aka `98DDK`, `version 5.0.2516.1900`.
 
 Place all the project files under `98DDK\src\input\JAMMAKJoy`, then start the 98DDK building environment.
 
 Use command `build -cZ` to compile. The result file can be found under `obj\i386`.
+
+*The Visual Studio workspace is for viewing coding only. Attempt to compile through VS will fail.*
 
 ------------
 ## Technical Details
